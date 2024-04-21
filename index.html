@@ -5,12 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!--ACHTUNG - DAS GEHT NUR WEGEN VITE! IN "ECHT" KANN KEIN TS IM BROWSER AUSGEFÜHRT WERDEN -->
-    <script defer type="module" src="/src/index.ts"></script>
+     <script defer type="module" src="/src/index.ts"></script> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
   </head>
 
   <body>
-    <img class="small-image" src="/jslogo.png" alt="JavaScript Logo" />
-    <label for="myInput">Type something:</label>
-    <input name="myInput" type="text" id="myInput" />
+   
+
+      <img id="titleLogo" src="src/styles/pokemon_logo.png">
+    
+      <input type="text" placeholder="Type the name of the pokemon" id="myInput" />
+      <input id="icon" type="image" onclick="click()" src="src/styles/search.png">
+      
+    
+
+  <div id="container">
+    <div id="pokes-container" class="ui cards">
+
+
+    </div> 
+  </div>
+
+    <script>
+/*
+      const url = 'https://quotes15.p.rapidapi.com/quotes/random/';
+      async function testApi() {
+        
+        const options = {
+          method: 'GET',
+          headers: {
+            
+            'X-RapidAPI-Key': '5fe81660b3mshe88476eea391157p158a24jsn2bfbd2e39849',
+            'X-RapidAPI-Host': 'quotes15.p.rapidapi.com'
+          }
+        };
+
+        try {
+          const response = await fetch(url, options);
+          const result = await response.text();
+          console.log(result);
+        } catch (error) {
+          console.error(error);
+        }
+
+      }
+
+      testApi();
+*/
+       // async function chintai() {}
+        
+//        chintai();
+
+/*
+         
+*/
+
+    </script>
+
   </body>
 </html>
