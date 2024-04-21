@@ -4,7 +4,7 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "open":"https://pokeapi.co/api/v2/ability/?limit=20&offset=20",
+    "open":"https://pokeapi.co/api/v2/ability/?limit=200&offset=200",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"

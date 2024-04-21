@@ -14,7 +14,7 @@ textInput.addEventListener('input', (e) => {
 */
 
 function getPokemon(){
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=5')
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
     .then(response => response.json())
     //.then(allPokemon => console.log(allPokemon))
     .then(function(allPokemon){
