@@ -22,11 +22,22 @@ body{
 }
 
 #onePokemonCard{
-    background-color: grey;
-    
+    background-color:white;
+    border: 1px solid pink;
+    padding: 30px;
+    margin: 30px;
+    border-radius: 25px;
+}
+
+h4{
+    background-color:white;
+
 }
 
 
+ul{
+    background-color: white;
+}
 
 #titleLogo{
     /* warum muss ich die 3 Werte schreiben damit Bild in der Mitte ist? */
@@ -65,7 +76,7 @@ body{
     float:right;
     position:absolute;
     margin-right:30px;
-    top: 19%;
+    top: 2.5%;
     left: 66%;
     z-index:2;
     height: 35px;

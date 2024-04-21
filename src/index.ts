@@ -1,5 +1,5 @@
 // Imports use relative file paths or Node.js package names
-import { buttonTest  } from './dom-utils';
+import { buttonTest,  textInput  } from './dom-utils';
 // CSS IMPORT IN TS NUR ÜBER VITE MÖGLICH
 import './styles/styles.css';
 
@@ -12,6 +12,12 @@ textInput.addEventListener('input', (e) => {
     console.log((e.target as HTMLInputElement).value);
 });
 */
+
+buttonTest.addEventListener("click", (e) => {
+    console.log("test")
+
+});
+
 
 function getPokemon(){
     fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
@@ -43,19 +49,10 @@ function getPokemon(){
     
     let pokeContainer = document.createElement("div")
     pokeContainer.id = "onePokemonCard";
-   // pokeContainer.style.backgroundColor = "grey";
-    /*
-    pokeContainer.style.outline;
-    pokeContainer.style.float = "left";
-    pokeContainer.style.margin = "1em";
-    pokeContainer.style.border = "inset";
-    pokeContainer.style.padding="2em";
-    pokeContainer.style.height="280px";
-*/
+ 
     let pokeName = document.createElement('h4') //Name des Pokemons als 'Überschrift'
     pokeName.innerText = pokeData.name //Name von Pokemon
-    //pokeName.style.backgroundColor="white";
-
+    
     let pokeNumber = document.createElement('p')
     pokeNumber.innerText = pokeData.id //ID des Pokemons
 
@@ -65,8 +62,6 @@ function getPokemon(){
     let pokeImage = document.createElement('img')
     pokeImage.id= 'imagePok';
     pokeImage.src =  pokeData.sprites.other.dream_world.front_default;
-    //pokeImage.style.height="150px";
-    //pokeImage.style.backgroundColor="lightgrey"
 
     pokeContainer.append(pokeName, pokeImage, pokeTypes);
     
@@ -82,10 +77,31 @@ function createTypes(types, ul){
     })
 }
 
+
+
 function click(){
-    document.getElementById('#searchClick');
+    console.log("click-Funktion");
+    let btn = document.getElementById("icon");
+    btn?.addEventListener("click", e => getPokemonCard(pokeData));
+
+}
+
+function getPokemonCard(pokeData){
     console.log("ich wurde geklickt");
-    buttonTest.click();
+    let allPokemonContainer = document.getElementById('pokes-container');
+    allPokemonContainer?.remove();
+
+    let namepok = pokeData.forEach(search => {
+        search.name
+    
+    if(textInput.innerHTML = namepok){
+        renderPokemon(namepok);
+        console.log(renderPokemon(namepok))
+    }
+    else{
+        null;
+    }
+});
 }
 
 
