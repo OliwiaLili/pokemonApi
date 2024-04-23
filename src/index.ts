@@ -13,8 +13,29 @@ textInput.addEventListener('input', (e) => {
 });
 */
 
-buttonTest.addEventListener("click", (e) => {
-    console.log("test")
+
+
+
+let userText = textInput.innerHTML;
+
+userText = "hallo";
+console.log("test 1: " + userText );
+
+buttonTest.addEventListener("click", function(e) {
+    e.preventDefault(); //warum????
+    userText = textInput.value; //lesen der Usereingabe
+
+    console.log("button angeklickt")
+    console.log("test 2 " + userText);
+    
+    let allPokemonContainer = document.getElementById('pokes-container')
+    allPokemonContainer?.remove();
+
+    
+
+   // allPokemonContainer?.remove();
+    
+
 
 });
 
@@ -25,7 +46,9 @@ function getPokemon(){
     //.then(allPokemon => console.log(allPokemon))
     .then(function(allPokemon){
         allPokemon.results.forEach((pokemon)=> {
+            
             fechtPokemonData(pokemon);
+            
         })
     })
 
@@ -37,11 +60,14 @@ function getPokemon(){
     .then(response=>response.json())
    //.then(pokeData => console.log(pokeData)); //pro Array-Eintrag ist ein Pokemon
     .then(function(onePokemon){
-        console.log(onePokemon);
+        //console.log(onePokemon);
             renderPokemon(onePokemon);
+            
  })
 
 }
+
+
 
  function renderPokemon(pokeData){
 
@@ -66,43 +92,21 @@ function getPokemon(){
     pokeContainer.append(pokeName, pokeImage, pokeTypes);
     
     allPokemonContainer?.appendChild(pokeContainer);
-
+    
+    
+    
+    
  }
 
 function createTypes(types, ul){
     types.forEach(function(type){
         let typeLi = document.createElement('li');
+        //console.log(typeLi);
         typeLi.innerText = type['type']['name'];
         ul.append(typeLi)
     })
 }
 
-
-
-function click(){
-    console.log("click-Funktion");
-    let btn = document.getElementById("icon");
-    btn?.addEventListener("click", e => getPokemonCard(pokeData));
-
-}
-
-function getPokemonCard(pokeData){
-    console.log("ich wurde geklickt");
-    let allPokemonContainer = document.getElementById('pokes-container');
-    allPokemonContainer?.remove();
-
-    let namepok = pokeData.forEach(search => {
-        search.name
-    
-    if(textInput.innerHTML = namepok){
-        renderPokemon(namepok);
-        console.log(renderPokemon(namepok))
-    }
-    else{
-        null;
-    }
-});
-}
 
 
 getPokemon();
