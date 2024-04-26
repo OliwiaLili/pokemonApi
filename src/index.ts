@@ -1,5 +1,6 @@
 // Imports use relative file paths or Node.js package names
 import { searchButton,  textInput , trashButton } from './dom-utils';
+import swal from 'sweetalert';
 // CSS IMPORT IN TS NUR ÜBER VITE MÖGLICH
 import './styles/styles.css';
 
@@ -36,6 +37,7 @@ function startApi(){
 
     searchButton.addEventListener("click", function(e) {
         e.preventDefault(); //warum????
+        pokemonListFilter = [];
         userText = textInput.value; //lesen der Usereingabe
         ut = userText.toLocaleLowerCase();
         console.log(ut)
@@ -58,17 +60,11 @@ function startApi(){
                 //pokemonList.indexOf(userText) == -1
                 //typeof ut == 'number'
                 //|| ut.length != 1 || !(ut.match(/[a-z]/i))
-                    ;
-                    //let allPokemonContainer = document.getElementById('pokes-container');
+                    
                     console.log("im else-if");
-                    alert("Es wurde kein Pokemon gefunden");
+                    swal("Es wurde leider kein Pokemon gefunden");
                     textInput.value = "";
-                    /*
-                    let fehlerText = document.createElement("h1");
-                    fehlerText.innerHTML = "Es wurde kein Pokemon gefunden";
-                    allPokemonContainer?.insertAdjacentElement('afterbegin', fehlerText)
-                    */
-                
+                    
             }
              
         });
