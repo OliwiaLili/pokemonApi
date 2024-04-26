@@ -49,7 +49,7 @@ function startApi(){
                 console.log(element.name);
                 console.log("gefunden")
                 pokemonListFilter.push(element);
-                
+                indexNew = indexNew - 2;
                 renderOnePokemon(pokemonListFilter);
                 
             }
@@ -58,7 +58,7 @@ function startApi(){
                 //pokemonList.indexOf(userText) == -1
                 //typeof ut == 'number'
                 //|| ut.length != 1 || !(ut.match(/[a-z]/i))
-                    indexNew = 1;
+                    ;
                     //let allPokemonContainer = document.getElementById('pokes-container');
                     console.log("im else-if");
                     alert("Es wurde kein Pokemon gefunden");
@@ -72,6 +72,7 @@ function startApi(){
             }
              
         });
+        indexNew = 1
     });
 
 
@@ -173,15 +174,15 @@ function renderOnePokemon(pokemonListFilter){
     pokeName.innerText = pokemonListFilter[0].name.charAt(0).toUpperCase() + pokemonListFilter[0].name.slice(1);
 
     let pokeNumber = document.createElement('p')
-    pokeNumber.innerText = pokemonListFilter.id //ID des Pokemons
+    pokeNumber.innerText = pokemonListFilter[0].id //ID des Pokemons
 
     let pokeTypes = document.createElement('ul') //Stichpunkte Liste wird erstellt
-    createTypes(pokemonListFilter.types, pokeTypes) //in der Stichpunkte Liste werden 'bullet points' erstellt 
+    createTypes(pokemonListFilter[0].types, pokeTypes) //in der Stichpunkte Liste werden 'bullet points' erstellt 
     
 
     let pokeImage = document.createElement('img')
     pokeImage.id= 'imagePok';
-    pokeImage.src =  pokemonListFilter.sprites.other.dream_world.front_default;
+    pokeImage.src =  pokemonListFilter[0].sprites.other.dream_world.front_default;
 
     pokeContainer.append(pokeName, pokeImage, pokeTypes);
     
