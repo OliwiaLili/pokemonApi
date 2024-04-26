@@ -5,7 +5,7 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    position: relative;
+    
     
 }
 
@@ -29,15 +29,26 @@ body{
     border-radius: 25px;
 }
 
-h4{
+h3{
     background-color:white;
+    text-align: center;
 
 }
 
+p{
+    margin-bottom:0;
+    margin-top: 10px;
+    text-decoration: underline;
+
+}
 
 ul{
     background-color: white;
+    margin:0;
+    
 }
+
+
 
 #titleLogo{
     /* warum muss ich die 3 Werte schreiben damit Bild in der Mitte ist? */
@@ -59,25 +70,51 @@ ul{
    
 }
 
+.search{
+    position: relative;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+
 #myInput{
-    display: block;
+    
+    display:block;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 30px;
-    font-size: 25px;
+    font-size: 19px;
     border: 2px solid blue;
     border-radius:20px;
     width:700px;
     height: 40px;
-    background-image: url("https://www.flaticon.com/search?word=search") no-repeat left;
-
+    
+    padding-left: 10px; /* damit der 'placeholder' Inhalt etwas links Abstand hat */
+    
 }
 #icon{
-    float:right;
-    position:absolute;
-    margin-right:30px;
-    top: 2.5%;
-    left: 66%;
-    z-index:2;
+    
+   position:absolute;   
+    top:0;
+    margin-left: 570px;
+    z-index: 2;
     height: 35px;
+    background-color: transparent; 
+    border:none;
+   
 }
+
+#trash{
+    position:absolute;
+    top: 0.8em;
+    margin-left:640px;
+    z-index:2;
+    background-color: transparent;
+    border:none;
+}
+
+
+
+

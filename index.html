@@ -12,45 +12,24 @@
 
   <body>
    
-
       <img id="titleLogo" src="src/styles/pokemon_logo.png">
-    
-      <input type="text" placeholder="Type the name of the pokemon" id="myInput" />
-      <input id="icon" type="button" onclick="click" src="src/styles/search.png">
+
+      <div class="search">
+        <input type="text" placeholder="Type the name of the pokemon" id="myInput" />
+        <button id="icon" class="fa-solid fa-magnifying-glass fa-xl"></button>
+        <button id="trash"  class="fa-solid fa-trash fa-xl"></button>
+         
+      </div>
       
-    
-
-  <div id="container">
-    <div id="pokes-container" class="ui cards">
-
-
-    </div> 
-  </div>
+      
+      <div id="container">
+        <div id="pokes-container" class="ui cards">
+        </div> 
+      </div>
 
     <script>
 /*
-      const url = 'https://quotes15.p.rapidapi.com/quotes/random/';
-      async function testApi() {
-        
-        const options = {
-          method: 'GET',
-          headers: {
-            
-            'X-RapidAPI-Key': '5fe81660b3mshe88476eea391157p158a24jsn2bfbd2e39849',
-            'X-RapidAPI-Host': 'quotes15.p.rapidapi.com'
-          }
-        };
-
-        try {
-          const response = await fetch(url, options);
-          const result = await response.text();
-          console.log(result);
-        } catch (error) {
-          console.error(error);
-        }
-
-      }
-
+      
       testApi();
 */
        // async function chintai() {}
