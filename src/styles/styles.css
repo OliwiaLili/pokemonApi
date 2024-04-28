@@ -121,6 +121,13 @@ ul{
     border:none;
 }
 
+@media only screen and (max-width: 600px){
+    #icon{
+        
+            color: red;
+            right:50px;
+    }
 
+} 
 
 

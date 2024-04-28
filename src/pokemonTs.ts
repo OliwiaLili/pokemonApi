@@ -61,7 +61,6 @@ function startApi(){
                 //typeof ut == 'number'
                 //|| ut.length != 1 || !(ut.match(/[a-z]/i))
                     
-                    console.log("im else-if");
                     swal("Es wurde leider kein Pokemon gefunden");
                     textInput.value = "";
                     
@@ -100,8 +99,8 @@ function getPokemon(){
     //.then(allPokemon => console.log(allPokemon))
     .then(function(allPokemon){
         allPokemon.results.forEach((pokemon:Pokemon)=> {
-            fechtPokemonData(pokemon);
             
+            fechtPokemonData(pokemon);
         })
     })
 
@@ -116,7 +115,6 @@ function getPokemon(){
         
         pokemonList.push(onePokemon); //in Array werden alle Daten von Pokemon reingetan
             renderPokemon(onePokemon);
-            
  })
 
 }
