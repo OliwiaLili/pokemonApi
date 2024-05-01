@@ -14,18 +14,11 @@ textInput.addEventListener('input', (e) => {
 });
 */
 
-interface Pokemon{
-    name: string;
-    id: string;
-    types: string;
-    sprites: any;
-    type:any;
-    url: string;
-}
+
 
 let userText: string;
-let pokemonList: any[] = [];
-let pokemonListFilter: any[] = [];
+let pokemonList: Pokemon[] = [];
+let pokemonListFilter: Pokemon[] = [];
 let indexNew: number = 1;
 let ut: string;
 
@@ -61,7 +54,7 @@ function startApi(){
                 //typeof ut == 'number'
                 //|| ut.length != 1 || !(ut.match(/[a-z]/i))
                     
-                    swal("Es wurde leider kein Pokemon gefunden");
+                    swal("Es wurde leider kein Pokemon gefunden","","error");
                     textInput.value = "";
                     
             }
@@ -120,8 +113,8 @@ function getPokemon(){
 }
 
 function renderAllPokemonArray(pokemonList:Pokemon){
-    console.log("in der funktion");
-    console.log(pokemonList.name)
+    //console.log("in der funktion");
+    //console.log(pokemonList.name)
     let allPokemonContainer = document.getElementById('pokes-container');
     //das Div wird geleer bzw. Inhalt entfernt
     
@@ -130,29 +123,28 @@ function renderAllPokemonArray(pokemonList:Pokemon){
  
     let pokeName = document.createElement('h4') //Name des Pokemons als 'Überschrift'
     //pokeName.innerText = pokemonListFilter[0].name //Name von Pokemon
-    pokeName.innerText = pokemonList.name;
+    pokeName.innerText = pokemonList.name.charAt(0).toUpperCase() + pokemonList.name.slice(1);;
 
-    let pokeNumber = document.createElement('p')
-    pokeNumber.innerText = pokemonList.id //ID des Pokemons
+    let abilites = document.createElement('p')
+    abilites.innerText = "Abilities:" 
 
     let pokeTypes = document.createElement('ul') //Stichpunkte Liste wird erstellt
     createTypes(pokemonList.types, pokeTypes) //in der Stichpunkte Liste werden 'bullet points' erstellt 
     
-
     let pokeImage = document.createElement('img')
     pokeImage.id= 'imagePok';
     pokeImage.src =  pokemonList.sprites.other.dream_world.front_default;
 
-    pokeContainer.append(pokeName, pokeImage, pokeTypes);
+    pokeContainer.append(pokeName, pokeImage,abilites , pokeTypes);
     
     allPokemonContainer?.appendChild(pokeContainer);
 
-    console.log("ende der funktion")
+    //console.log("ende der funktion")
  }
 
 
-function renderOnePokemon(pokemonListFilter){
-    console.log("in der funktion");
+function renderOnePokemon(pokemonListFilter: any){
+    //console.log("in der funktion");
     
     let allPokemonContainer = document.getElementById('pokes-container');
     //das Div wird geleer bzw. Inhalt entfernt
@@ -167,8 +159,9 @@ function renderOnePokemon(pokemonListFilter){
     //pokeName.innerText = pokemonListFilter[0].name //Name von Pokemon
     pokeName.innerText = pokemonListFilter[0].name.charAt(0).toUpperCase() + pokemonListFilter[0].name.slice(1);
 
-    let pokeNumber = document.createElement('p')
-    pokeNumber.innerText = pokemonListFilter[0].id //ID des Pokemons
+
+    let abilites = document.createElement('p')
+    abilites.innerText = "Abilities:" 
 
     let pokeTypes = document.createElement('ul') //Stichpunkte Liste wird erstellt
     createTypes(pokemonListFilter[0].types, pokeTypes) //in der Stichpunkte Liste werden 'bullet points' erstellt 
@@ -178,10 +171,10 @@ function renderOnePokemon(pokemonListFilter){
     pokeImage.id= 'imagePok';
     pokeImage.src =  pokemonListFilter[0].sprites.other.dream_world.front_default;
 
-    pokeContainer.append(pokeName, pokeImage, pokeTypes);
+    pokeContainer.append(pokeName, pokeImage,abilites ,pokeTypes);
     
     allPokemonContainer?.appendChild(pokeContainer);
-    console.log("ende der funktion")
+    //console.log("ende der funktion")
  }
 
 
@@ -201,9 +194,10 @@ function renderOnePokemon(pokemonListFilter){
     pokeName.innerHTML = tes;
     */
     
+    /*
     let pokeNumber = document.createElement('p')
     pokeNumber.innerText = pokeData.id //ID des Pokemons
-
+*/
     let abilites = document.createElement('p')
     abilites.innerText = "Abilities:"    
 
@@ -221,7 +215,7 @@ function renderOnePokemon(pokemonListFilter){
     
  }
 
-function createTypes(types, ul){
+function createTypes(types: any, ul: any){
     types.forEach(function(type:Pokemon){
         let typeLi = document.createElement('li');
         //console.log(typeLi);
