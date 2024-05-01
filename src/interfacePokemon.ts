@@ -2,8 +2,8 @@ interface Pokemon{
     name: string,
     id: string,
     types: string,
-    sprites: any,
-    type:any,
+    sprites: string,
+    type:string,
     url: string,
-    
+
 }
