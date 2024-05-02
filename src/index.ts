@@ -14,8 +14,6 @@ textInput.addEventListener('input', (e) => {
 });
 */
 
-
-
 let userText: string;
 let pokemonList: Pokemon[] = [];
 let pokemonListFilter: Pokemon[] = [];
@@ -215,8 +213,8 @@ function renderOnePokemon(pokemonListFilter: any){
     
  }
 
-function createTypes(types: any, ul: any){
-    types.forEach(function(type:Pokemon){
+function createTypes(types: Types[], ul: any){
+    types.forEach(function(type:Types){
         let typeLi = document.createElement('li');
         //console.log(typeLi);
         typeLi.innerText = type['type']['name'];
