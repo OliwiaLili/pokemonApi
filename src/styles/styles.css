@@ -80,7 +80,7 @@ ul{
     position: relative;   
     display: flex;
     justify-content: center;
-    align-items: center;
+    
     margin-top: 25px;
 }
 
@@ -109,6 +109,8 @@ ul{
     height: 35px;
     background-color: transparent; 
     border:none;
+    cursor:pointer;
+    color: #fcbf49;
    
 }
 
@@ -119,8 +121,12 @@ ul{
     z-index:2;
     background-color: transparent;
     border:none;
+    cursor: pointer;
+    color: #d62828;
+    
 }
 
+/* wenn der Bildschirm kleiner als 600px hat
 @media only screen and (max-width: 600px){
     #icon{
         
@@ -129,5 +135,5 @@ ul{
     }
 
 } 
-
+*/
 
